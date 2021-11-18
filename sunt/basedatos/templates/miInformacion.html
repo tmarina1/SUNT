@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mi informacion</title>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="principal_miInformacion">
+      <h1 class="titulo_miInformacion">Datos Personales</h1>
+      <div class="contenedor_campo">
+        <p class="campo" id="nombre"><strong>Nombre: </strong> 
+          {% if info_usuario %}
+          {{info_usuario.nombre}}
+          {% endif %}
+        </p>
+        <p class="campo" id="apellido"><strong>Apellido: </strong>
+          {% if info_usuario %}
+          {{info_usuario.apellido}}
+          {% endif %}
+        </p>
+        <p class="campo" id="cedula"><strong>Documento de identificación: </strong>
+          {% if info_usuario %}
+          {{info_usuario.identificacion}}
+          {% endif %}
+        </p>
+        <p class="campo" id="direccion"><strong>Direccion: </strong>
+          {% if info_usuario %}
+          {{info_usuario.direccion}}
+          {% endif %}
+        </p>
+        <p class="campo" id="telefono"><strong>Telefono: </strong>
+          {% if info_usuario %}
+          {{info_usuario.telefono}}
+          {% endif %}
+        </p>
+        <p class="campo" id="correo"><strong>Correo: </strong>
+          {% if info_usuario %}
+          {{info_usuario.correo}}
+          {% endif %}
+        </p>
+        <p class="campo" id="fechaExpediccion"> <strong>Fecha expediccion: </strong>
+          {% if info_usuario %}
+          {{info_usuario.expedicionDocumento}}
+          {% endif %}
+        </p>
+        <p class="campo" id="fechaNacimiento"> <strong>Fecha nacimiento: </strong>
+          {% if info_usuario %}
+          {{info_usuario.fechaNacimiento}}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+    <div class="espacio"></div>
+  </body>
+</html>

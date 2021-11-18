@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/social.css' %}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="social-bar">
+      <a
+        href="https://api.whatsapp.com/send?phone=573128241568"
+        class="icon icon-whatsapp"
+        target="_blank"
+      ></a>
+      <a href="tel:+4 4931655" class="icon icon-phone" target="_blank"></a>
+      <a
+        href="mailto:soportesunt@gmail.com"
+        class="icon icon-mail"
+        target="_blank"
+      ></a>
+    </div>
+    <div class="contenido_principal">
+      <h1 id="titulo_inicio">Boletín informativo</h1>
+      <section class="post_list">
+        <article class="post">
+          <div class="post_header">
+            <img
+              src="https://www.elcolombiano.com/binrepository/580x387/0c11/580d365/none/11101/PUXY/derrumbe-1_38719046_20211011150552.jpg"
+              alt="Imagen derrumbe"
+            />
+          </div>
+          <div class="post_body">
+            <spam>EL COLOMBIANO | Publicado el 11 de octubre de 2021</spam>
+            <h2>
+              Avanza remoción de derrumbe: podría haber personas atrapadas
+            </h2>
+            <p>
+              El cuerpo de Bomberos de Copacabana está activado, con apoyo de
+              caninos, buscando si debajo del derrumbe que cayó sobre la vía a
+              la Costa Atlántica...
+            </p>
+            <p>
+              Para leer más haz
+              <a
+                class="post_link"
+                href="https://www.elcolombiano.com/antioquia/derrumbe-en-copacabana-tiene-cerrada-totalmente-la-via-a-la-costa-atlantica-AL15875151"
+                target="blank"
+                >click aqui</a
+              >
+            </p>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post_header">
+            <img
+              src="https://www.elcolombiano.com/binrepository/580x402/0c37/580d365/none/11101/RFAX/malimentadores-del-metro-1-14_38708875_20211010192128.jpg"
+              alt="Imagen Buses"
+            />
+          </div>
+          <div class="post_body">
+            <spam
+              >Cristian Álvarez Balbín | Publicado el 11 de octubre de
+              2021</spam
+            >
+            <h2>
+              ¿Por qué se demoran tanto algunos buses alimentadores del metro?
+            </h2>
+            <p>
+              Demoras que pueden superar los 30 minutos (sobre todo en horas
+              pico), inconstancia en los horarios de frecuencia vehicular y
+              sobrecupos en los buses, son algunas de las quejas que hacen los
+              usuarios...
+            </p>
+            <p>
+              Para leer más haz
+              <a
+                class="post_link"
+                href="https://www.elcolombiano.com/antioquia/movilidad/por-que-se-demoran-tanto-algunos-buses-alimentadores-del-metro-BL15873345"
+                target="blank"
+                >click aqui</a
+              >
+            </p>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post_header">
+            <img
+              src="https://www.elcolombiano.com/binrepository/650x365/35c0/580d365/none/11101/MLVJ/whatsapp-image-2021-10-08-at-15-02-50-2_38703212_20211008151101.jpg"
+              alt="Imagen vía palmas"
+            />
+          </div>
+          <div class="post_body">
+            <spam
+              >Edison Ferney Henao H. | Publicado el 08 de octubre de 2021</spam
+            >
+            <h2>
+              Corregimiento de Armenia se quedó incomunicado y no hay fecha para
+              arreglo
+            </h2>
+            <p>
+              Las lluvias del miércoles pasado se terminaron de llevar la banca
+              en la vía que conecta a este pueblo del Occidente con Titiribí...
+            </p>
+            <p>
+              Para leer más haz
+              <a
+                class="post_link"
+                href="https://www.elcolombiano.com/antioquia/dano-en-via-deja-incomunicadas-a-cuatro-veredas-de-armenia-AJ15858796"
+                target="blank"
+                >click aqui</a
+              >
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <h2 class="videos_h2">Videos</h2>
+      <div class="videos">
+        <iframe
+          class="video_1"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/EuzzSiz0uYo"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <iframe
+          class="video_2"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/c2ANsuMXT4o"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="contenedor_info">
+        <h2 class="manual_info">Manual de uso</h2>
+        <a
+          class="manual"
+          href="https://drive.google.com/file/d/1vMegRM3yf2UzWWKiNTH5SY9BR0SxyaZV/view?usp=sharing"
+          target="blank"
+        >
+          <img
+            src="{% static 'sunt/imagenes/manual.jpg' %}"
+            alt="Imangen manual de uso"
+        /></a>
+      </div>
+
+      <div class="contenedor_tramite">
+        <h2 class="manual_tramite">Tramites, precios</h2>
+        <a
+          class="tramite"
+          href="https://drive.google.com/file/d/1rVrmJMeGHTejH1OEWQXIZiGP4hxWIaXb/view?usp=sharing"
+          target="blank"
+        >
+          <img
+            src="{% static 'sunt/imagenes/tramites(2).jpg' %}"
+            alt="Imangen manual de uso"
+        /></a>
+      </div>
+
+      <section class="container_mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.755625398552!2d-75.60490738523113!3d6.16347329553772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4683cb924b7003%3A0x4f5ae15f9ec254ac!2sSecretar%C3%ADa%20de%20Transporte%20y%20Tr%C3%A1nsito%20Envigado!5e0!3m2!1ses!2sco!4v1630980260822!5m2!1ses!2sco"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          id="mapa"
+        ></iframe>
+      </section>
+    </div>
+  </body>
+  <footer>
+    <div class="container_footer">
+      <div class="parrafo_footer">
+        <h4>Descripción</h4>
+        <p>
+          SUNT es un software que se desarrollara partiendo de la idea del RUNT
+          y que tomará mas en cuenta a los usuarios haciendo que se simplifique
+          la forma de uso y se minimice el tiempo requerido para la realización
+          de trámites.
+        </p>
+      </div>
+      <div class="contacto_footer">
+        <h4>Contacto</h4>
+        <p>
+          Tel: +57 316-532-4583
+          <br />
+          Dirección: Carrera 49, Cl. 7 sur # 50, Medellín
+          <br />
+          @Todos los derechos reservados
+        </p>
+      </div>
+      <div class="contacto_logos_footer">
+        <h4>Redes Sociales</h4>
+        <a href="https://api.whatsapp.com/send?phone=573128241568">
+          <i class="fab fa-whatsapp-square fa-2x" id="icono_whatsapp"></i>
+        </a>
+        <a href="tel:+4 4931654"
+          ><i class="fas fa-phone-square fa-2x" id="icono_telefono"></i>
+        </a>
+        <a href="mailto:soportesunt@gmail.com"
+          ><i class="fas fa-envelope-open-text fa-2x" id="icono_correo"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</html>

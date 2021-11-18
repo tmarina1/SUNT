@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %} {% if request.session.identificacion == "1001016308" %}
+    <meta http-equiv="REFRESH" content="0;{% url 'vistaAdmin' %}" />
+    {% else %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="principal">
+      <div class="imagen_perfil">
+        <div class="container_imagen">
+          <img
+            src="{% static 'sunt/imagenes/imgcuenta.jpg' %}"
+            alt="Imagen perfil"
+          />
+        </div>
+      </div>
+      <div class="container_datos">
+        <div class="dato">
+          <p class="nombre">
+            {% if request.session.nombre %} {{request.session.nombre}}
+            &nbsp;&nbsp; {% endif %}
+          </p>
+        </div>
+        <div class="dato">
+          <p class="cedula">
+            {% if request.session.identificacion %}
+            {{request.session.identificacion}} &nbsp;&nbsp; {% endif %}
+          </p>
+        </div>
+        <div class="dato">
+          <p class="correo">
+            {% if request.session.correo %} {{request.session.correo}}
+            &nbsp;&nbsp; {% endif %}
+          </p>
+        </div>
+        <div class="dato">
+          <a id="cerrar_sesion" href="{% url 'cerrar_sesion' %}">
+            Cerrar sesión</a
+          >
+        </div>
+      </div>
+
+      <section class="post_list_busquedas">
+        <article class="post_datos_cuenta">
+          <div class="post_header_consulta">
+            <a class="img_usuario" href="{% url 'miInformacion' %}"
+              ><img
+                src="{% static 'sunt/imagenes/usuario.jpg' %}"
+                alt="Imagen para mostrar atos usuario"
+            /></a>
+          </div>
+          <div class="post_body_consulta">
+            <h2>Mi informacion</h2>
+          </div>
+        </article>
+        <article class="post_datos_cuenta" id="post_mitad_datos_cuenta">
+          <div class="post_header_tramite2">
+            <a class="img_vehiculo" href="{% url 'miLicencia' %}">
+              <img
+                src="{% static 'sunt/imagenes/licencia2.png' %}"
+                alt="Imagen licencia usuario"
+            /></a>
+          </div>
+          <div class="post_body_consulta">
+            <h2>Mi licencia</h2>
+          </div>
+        </article>
+        <article class="post_datos_cuenta">
+          <div class="post_header_consulta">
+            <a class="img_vehiculo" href="{% url 'miVehiculo' %}">
+              <img
+                src="{% static 'sunt/imagenes/carro.jpg' %}"
+                alt="Imangen vehiculo"
+            /></a>
+          </div>
+          <div class="post_body_consulta">
+            <h2>Mi vehiculo</h2>
+          </div>
+        </article>
+      </section>
+      {% endif %}
+    </div>
+    <div class="espacio_datos_cuenta"></div>
+  </body>
+</html>

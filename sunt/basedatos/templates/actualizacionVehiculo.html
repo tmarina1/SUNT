@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/styleVehiculo.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="contenido_principal_login_vehiculo_actualizacion">
+      <h2 id="titulo_vehiculo_actualizacion">Actualización vehiculo</h2>
+      <div class="container_input" id="alerta">
+        <div class="msgActualizacionV">
+          {% for msg in messages%}
+          <center><b>{{msg}}</b></center>
+          {% endfor%}
+        </div>
+      </div>
+      <div class="linea" id="linea_vehiculo_actualizacion_0"></div>
+      <div class="login_actualizacion_vehiculo">
+        <form
+          class="login_form_vehiculo_actualizacion"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+
+          <div class="container_input" id="matricula">
+            <label for="Matricula" id="label_matricula">Matricula</label>
+            <input
+              type="text"
+              id="Matricula"
+              name="Matricula"
+              placeholder="Ingresar la matricula"
+              required
+            />
+          </div>
+          <div class="container_input" id="soat">
+            <label for="Soat_actualizacion" id="labelSoatActualizacion"
+              >SOAT</label
+            >
+            <input
+              id="Soat_actualizacion"
+              type="file"
+              required
+              name="Soat_actualizacion"
+            />
+          </div>
+          <div class="container_input" id="tecnicomecanica_actualizacion">
+            <label for="tecnicomecanicaActualizacion" id="labelTecnico"
+              >Técnico mecánica</label
+            >
+            <input
+              id="tecnicomecanicaActualizacion"
+              type="file"
+              required
+              name="tecnicomecanicaActualizacion"
+            />
+          </div>
+          <div class="container_input" id="prendasActualizacion">
+            <label for="prendas_actualizacion" id="labelPrendas">Prendas</label>
+            <input
+              id="prendas_actualizacion"
+              type="file"
+              required
+              name="prendas_actualizacion"
+            />
+          </div>
+          <div class="container_input" id="historialActualizacion">
+            <label for="historial_actualizacion" id="labelHistorial"
+              >Historial</label
+            >
+            <input
+              id="historial_actualizacion"
+              type="file"
+              required
+              name="historial_actualizacion"
+            />
+          </div>
+          <div class="container_boton">
+            <input
+              class="guardar_vehiculo_actualizacion"
+              type="submit"
+              value="Guardar"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="linea" id="linea1_vehiculo_actualizacion_0"></div>
+
+      <div class="linea" id="linea1_vehiculo_actualizacion_1"></div>
+      <a id="cuadro_flecha" href="{% url 'tramites' %}"
+        ><img
+          src="{% static 'sunt/imagenes/flecha.png' %}"
+          alt="Flecha para devolverse"
+      /></a>
+    </div>
+  </body>
+</html>

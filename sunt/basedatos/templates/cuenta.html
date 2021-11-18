@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/styleLogin.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="contenidoPrincipalLogin">
+      <h2 id="titulo">Iniciar Sesión</h2>
+      <div class="linea" id="linea0"></div>
+      <div class="login">
+        <form class="loginForm" method="POST">
+
+          {% csrf_token %}
+          
+          <div class="correo">
+            <label for="Email" id="labelCorreo">Correo</label>
+      
+            <input id="Email" type="email" placeholder="Ingresar el correo" name="correo" required/>
+          </div>
+          <div class="password">
+            <label for="Contraseña" id="labelPassword">Contraseña</label>
+            
+            <input
+              type="password"
+              id="Contraseña"
+              placeholder="Ingresar la contraseña"
+              name="clave"
+              required
+            />
+          </div>
+        
+      </div>
+      <div class="linea" id="linea1_parte1"></div>
+      <button type="submit" class="boton_iniciar_sesion">Iniciar sesión</button>
+      <div class="linea" id="linea1_parte2"></div>
+      </form>
+      <p>
+        Si no estas registrado haz
+        <a href="{% url 'RegistroUsuarios' %}">click aqui</a>
+      </p>
+    </div>
+    <div class = "mensajeCuenta"></div>
+    {% if messages %}
+      {% for msg in messages%}
+        <br>
+      <!--decorar bien porfa es que no sabo jaja (realmente es pereza no cabe en el cuadro) --> <center> <b>{{msg}}</b></center>
+      {% endfor%}
+    {% endif%}  
+  </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+def saludos(request): # vista
+  return HttpResponse("Hola maquinas")
+
+
+def calculaEdad(request, agno):
+  edadActual = 18
+  periodo=agno-2019
+  edadFutura=edadActual+periodo
+  documento="""
+  <html><body><h2>EN el año %s  tendrás %s años""" %(agno, edadFutura)
+
+  return HttpResponse(documento)
+
+
+  def index(request): # vista
+  doc_externo = open("C:/Users/TOMAS/OneDrive/Escritorio/proyecto1/proyecto/djangoSUNT/sunt/plantillas/index.html")
+  plt = Template(doc_externo.read())
+  doc_externo.close()
+  ctx = Context()
+  documento = plt.render(ctx)
+  
+  return HttpResponse(documento)
+
+  def index(request): # vista
+  
+  doc_externo = loader.get_template('index.html')
+  ctx = Context()
+  documento = doc_externo.render({})
+  
+  return HttpResponse(documento)
+
+
+
+
+
+
+
+  ----------------------------
+class Usuario(model.Model):
+  nombre = models.CharField(max_length = 30)
+  apellido = models.CharField(max_length = 30)
+  direccion = models.CharField(max_length = 50)
+  correo = models.EmailField()
+  telefono = models.CharField(max_length = 7)
+
+class Vehiculo(model.Model):
+  matricula = models.CharField(max_length = 30)
+  tipo = models.CharField(max_length = 30)
+  marca = models.CharField(max_length = 50)
+  VIM = models.IntegerField()  

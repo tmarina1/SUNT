@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/social.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas"><a href="{% url 'normas' %}">Normas</a></li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="social-bar">
+      <a
+        href="https://api.whatsapp.com/send?phone=573128241568"
+        class="icon icon-whatsapp"
+        target="_blank"
+      ></a>
+      <a href="tel:+4 4931655" class="icon icon-phone" target="_blank"></a>
+      <a
+        href="mailto:soportesunt@gmail.com"
+        class="icon icon-mail"
+        target="_blank"
+      ></a>
+    </div>
+    <div class="contenido_principal">
+      <div class="container_imagen_principal_sobre_nosotros">
+        <img
+          class="imagen_principal_sobre_nosotros"
+          src="{% static 'sunt/imagenes/somos1.jpeg' %}"
+          alt="via con señal de transito"
+        />
+      </div>
+      <p class="text_sobre_nosotros_1">
+        <table>
+          <tr class="text_sobre_nosotros_1">
+              <td>SUNT (sistema unico nacional de transito) es una plataforma que busca
+                mejorar la experiencia de los usuarios a la hora de realizar tramites de
+                tránsito.<br /><br />
+                Este proyecto surgio bajo el deseo de crear una plataforma con mejores
+                caracteristicas que las que se brindan en la actualidad, ya que con
+                experiencias personales de los fundadores de SUNT
+                se pudo evidenciar que a la hora de realizar tramites en plataformas de transito como el
+                RUNT, la mayoria de los usuarios tienen problemas en diferentes ámbitos
+                como no tener suficiente información sobre los tramites que se pueden realizar,
+                el gasto excesivo del tiempo del usuario al complicar los tramites con rutas complicadas
+                y con datos dificiles de obtener, entre otros. En SUNT queremos solucionar  
+                </td>
+              <td>estos inconvenientes teniendo formularios cortos para el registro de personas,
+                  carros y licencias. Tambien contamos con funcionalidades de consulta de datos tanto personales
+                  como de los anteriormente mencionados.
+                <br /><br />
+                Como ultima funcionalidad contamos con una actualización de datos rápida y sencilla 
+                ,ya que, en el caso de que cambies de casa, de vehiculo o simplemente cambies el número
+                de tu celular tendrás que actualizar los datos ante el transito. Esas eran las funcionalidades
+                principales del proyecto SUNT, sin embargo, también en el inicio de la página tenemos una sección
+                de noticias, una de videos informativos, una en donde se puede encontrar el manual de uso y los 
+                tramites con sus respectivos precios y por ultimo una sección con un mapa interactivo.
+              </td>
+          </tr>
+      </table>
+      </p>
+      <img
+        class="img_sobre_nostros_2"
+        src="{% static 'sunt/imagenes/aula-eafit.jpg' %}"
+        alt="Imagen alumnos EAFIT"
+      />
+      <p class="text_sobre_nosotros_2">
+        <h2 class="text_frase_2">Que funciones tiene SUNT:</h2>
+        <br />
+      <ol class="lista_sobre_nosotros">
+        <li>
+          Una de sus principales funciones es la de realizar registro de
+          usuarios en la plataforma de manera rapida e intuitiva.
+        </li>
+        <li>
+          Realizar registro de vehiculos con su imformacion importante permitiendo 
+          asociar vehiculos a usuarios.
+        </li>
+        <li>
+          Realizar registro de licencias pudiendo ser asignadas a una usuario.
+        </li>
+        <li>
+          Eliminacion de tramites engorrosos para los usuarios ya que antes se 
+          desplazaban de manera fisica y esto genera un gasto de tiempo y de dinero.
+        </li>
+      </ol>
+      </p>
+
+      <div class="logo_sobrenosotros">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div class="container_footer">
+      <div class="parrafo_footer">
+        <h4>Descripción</h4>
+        <p>
+          SUNT es un software que se desarrollara partiendo de la idea del RUNT
+          y que tomará mas en cuenta a los usuarios haciendo que se simplifique
+          la forma de uso y se minimice el tiempo requerido para la realización
+          de trámites.
+        </p>
+      </div>
+      <div class="contacto_footer">
+        <h4>Contacto</h4>
+        <p>
+          Tel: +57 316-532-4583
+          <br />
+          Dirección: Carrera 49, Cl. 7 sur # 50, Medellín
+          <br />
+          @Todos los derechos reservados
+        </p>
+      </div>
+      <div class="contacto_logos_footer">
+        <h4>Redes Sociales</h4>
+        <a href="https://api.whatsapp.com/send?phone=573128241568">
+          <i class="fab fa-whatsapp-square fa-2x" id="icono_whatsapp"></i>
+        </a>
+        <a href="tel:+4 4931654"
+          ><i class="fas fa-phone-square fa-2x" id="icono_telefono"></i>
+        </a>
+        <a href="mailto:soportesunt@gmail.com"
+          ><i class="fas fa-envelope-open-text fa-2x" id="icono_correo"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</html>

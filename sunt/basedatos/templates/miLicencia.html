@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mi licencia</title>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="principal_miInformacion">
+    <h1>Datos licencia</h1>
+    <div class="contenedor_campo">
+      {% if info_licencia %}
+      <p class="campo" id="identificacion"><strong>Identificacion: </strong>
+          {{info_licencia.identificacion}}
+      </p>
+      <p class="campo" id="fecha expedicion"><strong>Fecha expedicion: </strong>
+          {{info_licencia.fechaexpedicion}}
+      </p>
+      <p class="campo" id="fechavencimiento"><strong>Fecha vencimiento: </strong>
+          {{info_licencia.fechavencimiento}}
+      </p>
+      <p class="campo" id="categoria"><strong>Categoria: </strong>
+          {{info_licencia.categoria}}
+      </p>
+      <p class="campo" id="rh"><strong>RH: </strong>
+          {{info_licencia.rh}}
+      </p>
+      <p class="campo" id="nombre"><strong>Nombre: </strong>
+          {{info_licencia.nombre}}
+      </p>
+      <p class="campo" id="apellido"><strong>Apellido: </strong>
+          {{info_licencia.apellido}}
+      </p>
+      <p class="campo" id="restricciones"><strong>Restricciones: </strong>
+          {{info_licencia.restricciones}}
+      </p> 
+      <p class="campo" id="organismotransitoexpididor"><strong>Organismo transito expedidor: </strong>
+          {{info_licencia.organismotransitoexpedidor}}
+      </p>
+        
+      <p class="campo" id="foto_licencia"><strong>Foto licencia: </strong>
+          <img
+          src = "{{info_licencia.fotolicencia.url}}"
+          />
+      {% endif %}
+      </p>
+    </div>
+  </div>
+  </div>
+  <div class="espacio"></div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mi vehiculo</title>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="principal_miInformacion">
+      <h1>Datos Vehiculo</h1>
+      {% for vehiculo in info_vehiculo %}
+      <div class="contenedor_campo">
+        <p class="campo" id="Placa">
+          <strong>Placa: </strong>
+          {{vehiculo.matricula}}
+        </p>
+        <p class="campo" id="modelo">
+          <strong>Modelo: </strong>
+          {{vehiculo.modelo}}
+        </p>
+        <p class="campo" id="tipo">
+          <strong>Tipo: </strong>
+          {{vehiculo.tipo}}
+        </p>
+        <p class="campo" id="SOAT">
+          <strong>SOAT: </strong>
+          <a
+            href="{{vehiculo.SOAT.url}}"
+            download
+            target="_blank"
+            rel="noopener"
+            >SOAT.pdf</a
+          >
+        </p>
+        <p class="campo" id="tecnicomecanica">
+          <strong>Tecnico mecanica: </strong>
+          <a href="{{vehiculo.tecnicomecanica.url}}" download target="_blank"
+            >Tecnicomecanica.pdf</a
+          >
+        </p>
+        <p class="campo" id="servicio">
+          <strong>Servicio: </strong>
+          {{vehiculo.servicio}}
+        </p>
+        <p class="campo" id="marca">
+          <strong>Marca: </strong>
+          {{vehiculo.marca}}
+        </p>
+        <p class="campo" id="VIM">
+          <strong>VIM: </strong>
+          {{vehiculo.VIM}}
+        </p>
+        <p class="campo" id="prendas">
+          <strong>Prendas: </strong>
+          <a href="{{vehiculo.prendas.url}}" download>Prendas.pdf</a>
+        </p>
+        <p class="campo" id="tipocombustible">
+          <strong>Tipo combustible: </strong>
+          {{vehiculo.tipocombustible}}
+        </p>
+        <p class="campo" id="historial">
+          <strong>Historial: </strong>
+          <a href="{{vehiculo.historial.url}}" download>Historial.pdf</a>
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="espacio"></div>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'sunt/css/styleRegistro.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="{% static 'sunt/imagenes/icono.ico' %}" type="image/x-icon"/>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="contenidoPrincipalRegistroUsuario">
+      <h2 id="titulo_registro_licencia">Registro licencia</h2>
+      <div class="linea" id="linea0"></div>
+      <div class="login">
+        <form class="loginForm" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="container_input" id="alerta">
+              {%for message in messages%}
+              <span id="mensaje_alerta">{{message}}</span>
+              {% endfor %}
+          </div>
+          <div class="container_input" id="nombre">
+                <label for="Nombre" id="labelNombre">Nombre(s)</label>
+                <input type="text" id="Nombre" name="Nombre" placeholder="Ingresar nombre(s)">
+          </div>
+          <div class="container_input" id="apellido">
+                <label for="Apellido" id="labelApellido">Apellido</label>
+                <input type="text" id="Apellido" name="Apellido" placeholder="Ingresar apellido">
+          </div>
+          <div class="container_input" id="identificacion">
+                <label for="Identificacion" id="labelIdentificacion"># Identificación</label>
+                <input type="number" id="Identificacion" name="Identificacion" placeholder="Ingresar identificación">
+          </div>
+          <div class="container_input" id="fecha_expedicion">
+                <label for="Expedicion" id="Expedicion">Fecha expedición</label>
+                <input type="date" id="Expedicion" name="Expedicion" required>
+          </div>
+          <div class="container_input" id="fecha_vencimiento">
+                <label for="Vencimiento" id="Vencimiento">Fecha vencimiento</label>
+                <input type="date" id="fechaVencimiento" name="fechaVencimiento" required>
+          </div>
+          <div class="container_input" id="categoria">
+            <label for="Categoria" id="labelCategoria">Categoria</label>
+            <select name="Categoria" id="Categoria" name="Categoria" required>
+                <option value="a1">A1</option>
+                <option value="a2">A2</option>
+                <option value="b1">B1</option>
+                <option value="b2">B2</option>
+                <option value="b3">B3</option>
+                <option value="c1">C1</option>
+                <option value="c2">C2</option>
+                <option value="c3">C3</option>
+            </select>
+      </div>
+
+          <div class="container_input" id="direccion">
+                <label for="rh" id="labelRh">RH</label>
+                <select name="rh" id="rh" name="rh" required>
+                    <option value="o+">O+</option>
+                    <option value="o-">O-</option>
+                    <option value="a+">A+</option>
+                    <option value="a-">A-</option>
+                    <option value="b+">B+</option>
+                    <option value="b-">B-</option>
+                    <option value="ab+">AB+</option>
+                    <option value="ab-">AB-</option>
+                </select>
+          </div>
+          <div class="container_input" id="restricciones">
+                <label for="Restricciones" id="labelRestricciones">Restricciones</label>
+                <input id="Restricciones" type="text" name="Restricciones" placeholder="Ingresar las restricciones"/>
+          </div>
+          <div class="container_input" id="organismoExpedidor">
+                <label for="organismoExpedidor" id="labelOrganismo">Organismo expedidor</label>
+                <input type="text" id="organismoExpedidor" name="organismoExpedidor" placeholder="Ingresar organismo expedidor" required/>
+          </div>
+          <div class="container_input" id="licencia">
+                <label for="fotoLicencia" id="labelFoto">Foto licencia</label>
+                <input id="fotoLicencia" type="file" name="fotoLicencia" required/>
+          </div>
+          <div class="container_boton">
+            <input type="submit" class="guardar_registro_licencia" value="Guardar"></input>
+            <script type="text/javascript">
+              document.getElementById("mensaje_alerta").onmouseout = function () {
+                var enc = confirm("Desea responder una encuesta");
+                if (enc == true) {
+                  window.open('https://forms.gle/NBAWkTsXLnbQurJg7', '_newtab');
+                } else {
+                  alert("Se ha registrado correctamente");
+                }
+              };
+            </script>
+          </div>
+        </div>
+    </form>
+      <div class="linea" id="linea1_parte1"></div>
+     
+      <div class="linea" id="linea1_parte2"></div>
+      <a id="cuadro_flecha" href="{% url 'tramites' %}"
+        ><img
+          src="{% static 'sunt/imagenes/flecha.png' %}"
+          alt="Flecha para devolverse"
+      /></a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/styleVehiculo.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="contenidoPrincipalLogin">
+      <h2 id="titulo_vehiculo">Registro vehiculo</h2>
+      <div class="linea" id="linea_vehiculo_0"></div>
+      <div class="login">
+        <form
+          class="login_form_vehiculo"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <div class="container_input" id="alerta">
+            {%for message in messages%}
+            <span id="mensaje_alerta">{{message}}</span>
+            {% endfor %}
+          </div>
+          <div class="container_input" id="matricula">
+            <label for="Matricula" id="label_matricula">Matricula</label>
+            <input
+              type="text"
+              id="Matricula"
+              name="Matricula"
+              placeholder="Ingresar la matricula"
+              required
+            />
+          </div>
+          <div class="container_input" id="modelo">
+            <label for="Modelo" id="label_modelo">Modelo</label>
+            <input
+              type="text"
+              id="Modelo"
+              name="Modelo"
+              placeholder="Ingresar el modelo"
+              required
+            />
+          </div>
+          <div class="container_input" id="tipo">
+            <label for="Tipo" id="label_tipo">Tipo</label>
+            <input
+              id="Tipo"
+              type="text"
+              name="Tipo"
+              placeholder="Ingresar el tipo"
+              required
+            />
+          </div>
+          <div class="container_input" id="soat">
+            <label for="Soat" id="label_SOAT">SOAT</label>
+            <input
+              id="Soat"
+              type="file"
+              name="Soat"
+              placeholder="Ingresar el SOAT"
+              required
+            />
+          </div>
+          <div class="container_input" id="tecnicomecanica">
+            <label for="Tecnicomecanica" id="label_tecnico"
+              >Técnico mecánica</label
+            >
+            <input
+              id="Tecnicomecanica"
+              type="file"
+              placeholder="Ingresar la tecnico mecanica"
+              name="Tecnicomecanica"
+              required
+            />
+          </div>
+          <div class="container_input" id="tipoServicio">
+            <label for="Servicio" id="label_tiposervicio"
+              >Tipo de servicio</label
+            >
+            <input
+              id="Servicio"
+              type="text"
+              placeholder="Ingresar el tipo de servicio"
+              name="Servicio"
+              required
+            />
+          </div>
+          <div class="container_input" id="marca">
+            <label for="Marca" id="label_marca">Marca</label>
+            <input
+              id="Marca"
+              type="text"
+              name="Marca"
+              placeholder="Ingresar la marca"
+              required
+            />
+          </div>
+          <div class="container_input" id="vim">
+            <label for="Vim" id="label_VIM">VIM</label>
+            <input
+              id="Vim"
+              type="number"
+              name="Vim"
+              placeholder="Ingresar el VIM"
+              required
+            />
+          </div>
+          <div class="container_input" id="prenda">
+            <label for="Prenda" id="label_prendas">Prendas</label>
+            <input
+              id="Prenda"
+              type="file"
+              name="Prenda"
+              placeholder="Ingresar las prendas"
+              required
+            />
+          </div>
+          <div class="container_input" id="tipoCombustible">
+            <label for="tipoCombustible" id="label_combustible"
+              >Tipo de combustible</label
+            >
+            <input
+              id="tipoCombustible"
+              type="text"
+              placeholder="Ingresar el tipo de combustible"
+              name="tipoCombustible"
+              required
+            />
+          </div>
+          <div class="container_input" id="historial">
+            <label for="Historial" id="label_historial">Historial</label>
+            <input
+              id="Historial"
+              type="file"
+              placeholder="Ingresar el historial"
+              name="Historial"
+              required
+            />
+          </div>
+          <div class="container_input" id="cedula">
+            <label for="input_cedula" id="label_cedula">Id usuario</label>
+            <input
+              id="input_cedula"
+              type="text"
+              placeholder="Ingresar el id"
+              name="input_cedula"
+              required
+            />
+          </div>
+          <div class="container_boton">
+            <input class="guardar_vehiculo" type="submit" value="Guardar" />
+            <script type="text/javascript">
+              document.getElementById("mensaje_alerta").onmouseout =
+                function () {
+                  var enc = confirm("Desea responder una encuesta");
+                  if (enc == true) {
+                    window.open(
+                      "https://forms.gle/NBAWkTsXLnbQurJg7",
+                      "_newtab"
+                    );
+                  } else {
+                    alert("Se ha registrado correctamente");
+                  }
+                };
+            </script>
+          </div>
+        </form>
+      </div>
+      <div class="linea" id="linea1_parte1_vehiculo"></div>
+      <div class="linea" id="linea1_parte2_vehiculo"></div>
+      <a id="cuadro_flecha" href="{% url 'tramites' %}"
+        ><img
+          src="{% static 'sunt/imagenes/flecha.png' %}"
+          alt="Flecha para devolverse"
+      /></a>
+    </div>
+  </body>
+</html>

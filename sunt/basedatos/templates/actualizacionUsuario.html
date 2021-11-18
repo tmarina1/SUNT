@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/styleUsuario.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="contenidoPrincipalActualizacionUsuario">
+      <h2 id="titulo_usuario_actualizacion">Actualización</h2>
+      <div class="container_input" id="alerta">
+      <div class = "msgActualizacionU">
+      {% for msg in messages%}
+        <center> <b>{{msg}}</b></center>
+      {% endfor%}
+      </div>
+      </div>
+      <div class="login_actualizacion_usuario">
+        <form class="login_form_usuario_actualizacion" method="post">
+          {% csrf_token %}
+          <div class="container_input" id="identificacion">
+            <label for="Identificacion" id="labelIdentificacion"
+              ># Identificación</label
+            >
+            <input
+              type="number"
+              id="Identificacion"
+              name="Identificacion"
+              placeholder="Ingresar identificación"
+              required
+            />
+          </div>
+          <div class="container_input" id="telefono">
+            <label for="Telefono" id="labelTelefono">Teléfono</label>
+            <input
+              type="tel"
+              id="Telefono"
+              name="Telefono"
+              placeholder="Ingresar teléfono"
+              required
+            />
+          </div>
+          <div class="container_input" id="direccion">
+            <label for="Direccion" id="labelDireccion">Dirección</label>
+            <input
+              type="text"
+              id="Direccion"
+              name="Direccion"
+              placeholder="Ingresar dirección"
+              required
+            />
+          </div>
+          <div class="container_input" id="fecha_expedicion">
+            <label for="Expedicion" id="Expedicion">Fecha expedición</label>
+            <input type="date" id="Expedicion" name="Expedicion" required />
+          </div>
+          <div class="container_input" id="correo">
+            <label for="Email" id="labelCorreo">Correo</label>
+            <input
+              id="Email"
+              name="Email"
+              type="email"
+              placeholder="Ingresar el correo"
+              required
+            />
+          </div>
+          
+          <div class="container_boton" id="crear_cuenta">
+            <input type="submit" class="guardar_usuario_actualizacion" value="Actualizar" id="haceractualizacion" required></input>
+          </div>
+        </form>
+      </div>
+      <div class="linea" id="linea1_usuario_actualizacion_0"></div>
+      <div class="linea" id="linea1_usuario_actualizacion_1"></div>
+      <a id="cuadro_flecha" href="{% url 'tramites' %}"
+        ><img
+          src="{% static 'sunt/imagenes/flecha.png' %}"
+          alt="Flecha para devolverse"
+      /></a>
+    </div>
+  </body>
+</html>

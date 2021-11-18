@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Normativas</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/social.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="social-bar">
+      <a
+        href="https://api.whatsapp.com/send?phone=573128241568"
+        class="icon icon-whatsapp"
+        target="_blank"
+      ></a>
+      <a href="tel:+4 4931655" class="icon icon-phone" target="_blank"></a>
+      <a
+        href="mailto:soportesunt@gmail.com"
+        class="icon icon-mail"
+        target="_blank"
+      ></a>
+    </div>
+    <div class="contenido_principal">
+      <div class="container_imagen_normas">
+      <img
+        class="imagen_normas"
+        src="{% static 'sunt/imagenes/normativas.jpg' %}"
+        alt="imagen sobre un documento
+      referente a las normas"
+      />
+     </div>
+      <h2 class="titulo_normas">Normas</h2>
+      <section class="container_normas">
+          <div class="normas">
+            <h4 class="leyes">LEY # 2050 12 AGO 2020</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/normas/Ley%202050%20de%202020%20modifica%20la%20Ley%201503%20de%202011%20Curso%20virtual%20para%20infractores%20-%20Planes%20de%20Seguridad%20Vial%20y%20sanciones%20OT%20y%20OAT%20-%20ANSV.pdf"
+              >PDF ley #2050</a>
+          </div>
+          <div class="normas">
+            <h4 class="leyes">Ley 1964 de 2019</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/normas/Ley%201964%20de%202019%20En%20virtud%20de%20la%20cual%20se%20promueve%20el%20uso%20de%20veh%C3%ADculos%20el%C3%A9ctricos%20en%20Colombia.pdf"
+              >PDF ley 1964 de 2019</a>
+          </div>
+          <div class="normas">  
+            <h4 class="leyes">Ley 1940 de 2018</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/LEY-1940-DEL-26-DE-NOVIEMBRE-DE-2018.pdf"
+              >PDF Ley 1940 de 2018</a>
+          </div>
+          <div class="normas">
+            <h4 class="leyes">Ley 1843 de 2017</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/normas/Ley1843de2017.pdf"
+              >PDF Ley 1843 de 2017</a>
+          </div>
+          <div class="normas">
+            <h4 class="leyes">Ley 1702 de 2013</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/normas/Ley%201702%20de%202013%20sanciones%20a%20organismos%20de%20apoyo.pdf"
+              >PDF Ley 1702 de 2013</a>
+          </div>
+          <div class="normas">
+            <h4 class="leyes">Ley 1696 del 2013</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/normas/LEY%201696%20DEL%2019%20DE%20DICIEMBRE%20DE%202013.pdf"
+              >PDF Ley 1696 del 2013</a>
+          </div>
+          <div class="normas">
+            <h4 class="leyes">Ley 1630 de 2013</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/normas/Ley1630de2013.pdf"
+              >PDF Ley 1630 de 2013</a>
+          </div> 
+          <div class="normas"> 
+            <h4 class="leyes">Ley 1548 de 2012</h4>
+            <a
+              class="link_normas"
+              href="https://www.runt.com.co/sites/default/files/normas/Ley%201548%20de%202012%20Nuevas%20sanciones%20por%20alcoholemia.pdf"
+              >PDF Ley 1548 de 2012</a>
+          </div>
+      </section>
+    </div>
+  </body>
+  <footer id="footer_normas">
+    <div class="container_footer">
+      <div class="parrafo_footer">
+        <h4>Descripción</h4>
+        <p>
+          SUNT es un software que se desarrollara partiendo de la idea del RUNT
+          y que tomará mas en cuenta a los usuarios haciendo que se simplifique
+          la forma de uso y se minimice el tiempo requerido para la realización
+          de trámites.
+        </p>
+      </div>
+      <div class="contacto_footer">
+        <h4>Contacto</h4>
+        <p>
+          Tel: +57 316-532-4583
+          <br />
+          Dirección: Carrera 49, Cl. 7 sur # 50, Medellín
+          <br />
+          @Todos los derechos reservados
+        </p>
+      </div>
+      <div class="contacto_logos_footer">
+        <h4>Redes Sociales</h4>
+        <a href="https://api.whatsapp.com/send?phone=573128241568" target="blank">
+          <i class="fab fa-whatsapp-square fa-2x" id="icono_whatsapp"></i>
+        </a>
+        <a href="tel:+4 4931654"
+          ><i class="fas fa-phone-square fa-2x" id="icono_telefono"></i>
+        </a>
+        <a href="mailto:soportesunt@gmail.com" target="blank"
+          ><i class="fas fa-envelope-open-text fa-2x" id="icono_correo"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</html>

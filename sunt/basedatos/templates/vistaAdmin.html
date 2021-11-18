@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/styleUsuario.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/styleVehiculo.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Administrador</title>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="contenido_principal_vista_admin">
+      <h2 id="titulo_administracion">Administración</h2>
+      <table class="default">
+        <caption class="titulo_tabla">
+          <strong>Datos de la página web</strong>
+        </caption>
+        <tr class="columna">
+          <th>Edades registradas</th>
+          <th>Cantidad personas registradas</th>
+          <th>Cantidad vehiculos regstrados</th>
+          <th>Cantidad licencias registradas</th>
+        </tr>
+        <tr class="columna">
+          <td>{% if querys %} {{querys.consulta1}} {% endif %}</td>
+          <td>{% if querys %} {{querys.consulta2}} {% endif %}</td>
+          <td>{% if querys %} {{querys.consulta3}} {% endif %}</td>
+          <td>{% if querys %} {{querys.consulta4}} {% endif %}</td>
+        </tr>
+      </table>
+      </div>
+      <div class="containerGrafica">
+      <div class="grafica">
+        <img
+          class="grafica1"
+          src="{% static 'sunt/imagenes/grafica.png' %}"
+          alt="Imagen gráfica edades"
+        />
+      </div>
+      <div class="grafica">
+        <img
+          class="grafica2"
+          src="{% static 'sunt/imagenes/grafica2.png' %}"
+          alt="Imagen gráfica Tipo categoria"
+        />
+      </div>
+      <div class="grafica">
+        <img
+          class="grafica3"
+          src="{% static 'sunt/imagenes/grafica3.png' %}"
+          alt="Imagen gráfica del Tipo de vehiculo"
+        />
+      </div>
+      </div>
+        <div class="container_cerrar_sesion">
+          <div class="control_cerrar_sesion">
+            <a id="cerrar_sesion_admin" href="{% url 'cerrar_sesion' %}">
+            Cerrar sesión</a
+            >
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

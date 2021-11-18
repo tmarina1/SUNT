@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUNT</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/normalize.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'sunt/css/social.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'sunt/imagenes/icono.ico' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/712575d4a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <header>
+    <div class="logo_titulo_superior">
+      <div class="logo">
+        <img src="{% static 'sunt/imagenes/logoSunt.png' %}" alt="Logo Sunt" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav_items" id="inicio">
+          <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li class="nav_items" id="sobreNosotros">
+          <a href="{% url 'sobrenosotros' %}">Sobre Nosotros</a>
+        </li>
+        <li class="nav_items" id="cuenta">
+          <a href="{% url 'Cuenta' %}">Cuenta</a>
+        </li>
+        <li class="nav_items" id="normas">
+          <a href="{% url 'normas' %}">Normas</a>
+        </li>
+        <li class="nav_items" id="tramites">
+          <a href="{% url 'tramites' %}">Trámites</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container_busqueda">
+      <input type="text" placeholder="Buscar" required id="input_busqueda" />
+      <div class="icono_cuadro_busqueda_superior">
+        <i class="fas fa-search" icon></i>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="social-bar">
+      <a
+        href="https://api.whatsapp.com/send?phone=573128241568"
+        class="icon icon-whatsapp"
+        target="_blank"
+      ></a>
+      <a href="tel:+4 4931655" class="icon icon-phone" target="_blank"></a>
+      <a
+        href="mailto:soportesunt@gmail.com"
+        class="icon icon-mail"
+        target="_blank"
+      ></a>
+    </div>
+    <div class="contenido_principal">
+      <section class="post_list_tramites">
+        <article class="post">
+          <div class="post_header_tramite">
+            <a class="imagen_Tramite" href="{% url 'registroVehiculo' %}"
+              ><img
+                src="{% static 'sunt/imagenes/vehiculos.jpg' %}"
+                alt="Imagen vehiculos estacionados"
+                id="imagen_rebelde"
+            /></a>
+          </div>
+          <div class="post_body_tramite">
+            <h2>Registro vehiculo</h2>
+            <p>
+              Dando click en la imagen podras encontrar la el formulario de
+              registro de vehiculos.
+            </p>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post_header_tramite">
+            <a class="imagen_Tramite" href="{% url 'actualizacionVehiculo' %}">
+              <img
+                src="{% static 'sunt/imagenes/vehiculos2.jpg' %}"
+                alt="Imagen vehiculos estacionados"
+            /></a>
+          </div>
+          <div class="post_body_tramite">
+            <h2>Actualización vehiculo</h2>
+            <p>
+              Dando click en la imagen podras encontrar la el formulario de
+              actualizacion de vehiculos.
+            </p>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post_header_tramite">
+            <a class="imagen_Tramite" href="{% url 'RegistroLicencia' %}"
+              ><img
+                src="{% static 'sunt/imagenes/licencia.png' %}"
+                alt="Imagen licencia"
+                id="imagen_rebelde2"
+            /></a>
+          </div>
+          <div class="post_body_tramite">
+            <h2>Registro licencia</h2>
+            <p>
+              Dando click en la imagen podras encontrar la el formulario de
+              registro de licencias.
+            </p>
+          </div>
+        </article>
+        <article class="post_actualizacion">
+          <div class="post_header_tramite">
+            <a class="imagen_Tramite" href="{% url 'actualizacionUsuario' %}"
+              ><img
+                src="{% static 'sunt/imagenes/actualizacionUsuario.jpg' %}"
+                alt="Imagen licencia"
+                id="imagen_rebelde2"
+            /></a>
+          </div>
+          <div class="post_body_tramite">
+            <h2>Actualización usuario</h2>
+            <p>
+              Dando click en la imagen podras encontrar la el formulario de
+              actualizacion usuario.
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+  <footer>
+    <div class="container_footer">
+      <div class="parrafo_footer">
+        <h4>Descripción</h4>
+        <p>
+          SUNT es un software que se desarrollara partiendo de la idea del RUNT
+          y que tomará mas en cuenta a los usuarios haciendo que se simplifique
+          la forma de uso y se minimice el tiempo requerido para la realización
+          de trámites.
+        </p>
+      </div>
+      <div class="contacto_footer">
+        <h4>Contacto</h4>
+        <p>
+          Tel: +57 316-532-4583
+          <br />
+          Dirección: Carrera 49, Cl. 7 sur # 50, Medellín
+          <br />
+          @Todos los derechos reservados
+        </p>
+      </div>
+      <div class="contacto_logos_footer">
+        <h4>Redes Sociales</h4>
+        <a href="https://api.whatsapp.com/send?phone=573128241568">
+          <i class="fab fa-whatsapp-square fa-2x" id="icono_whatsapp"></i>
+        </a>
+        <a href="tel:+4 4931654"
+          ><i class="fas fa-phone-square fa-2x" id="icono_telefono"></i>
+        </a>
+        <a href="mailto:soportesunt@gmail.com"
+          ><i class="fas fa-envelope-open-text fa-2x" id="icono_correo"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</html>
